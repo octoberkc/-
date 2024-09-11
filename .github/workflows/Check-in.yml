@@ -1,0 +1,31 @@
+name: Multi-Airport Check-in
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # 每天7点（UTC时间）执行，CRON表达式
+  workflow_dispatch:  # 允许手动触发工作流
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 镜像
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # 你可以选择 Python 版本
+
+      - name: Install requests
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run check-in script
+        env:
+          ACCOUNT1: ${{ secrets.ACCOUNT1 }}
+          ACCOUNT2: ${{ secrets.ACCOUNT2 }}
+          SCKEY: ${{ secrets.SCKEY }}
+        run: |
+          python checkin.py
