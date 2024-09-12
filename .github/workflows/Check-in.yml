@@ -26,6 +26,9 @@ jobs:
         env:
           ACCOUNT1: ${{ secrets.ACCOUNT1 }}
           ACCOUNT2: ${{ secrets.ACCOUNT2 }}
+          ACCOUNT3: ${{ secrets.ACCOUNT3 }}
+          ACCOUNT4: ${{ secrets.ACCOUNT4 }}
+          ACCOUNT5: ${{ secrets.ACCOUNT5 }}
           SCKEY: ${{ secrets.SCKEY }}
         run: |
           python checkin.py
