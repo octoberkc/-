@@ -2,7 +2,7 @@ name: Multi-Airport Check-in
 
 on:
   schedule:
-    - cron: '0 7 * * *'  # 每天7点（UTC时间）执行，CRON表达式
+    - cron: '0 17 * * *'  # 每天7点（UTC时间）执行，CRON表达式
   workflow_dispatch:  # 允许手动触发工作流
 
 jobs:
