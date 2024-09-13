@@ -29,6 +29,7 @@ jobs:
           ACCOUNT3: ${{ secrets.ACCOUNT3 }}
           ACCOUNT4: ${{ secrets.ACCOUNT4 }}
           ACCOUNT5: ${{ secrets.ACCOUNT5 }}
+          ACCOUNT6: ${{ secrets.ACCOUNT6 }}
           SCKEY: ${{ secrets.SCKEY }}
         run: |
           python checkin.py
